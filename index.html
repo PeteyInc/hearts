@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html ng-app="hearts">
   <head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <title>Hearts</title>
   </head>
-  <body>
+  <body ng-controller="mainCtrl">
     <main role="main">
       <header class="main-header">
-        <h1 class="red">Hearts</h1>
+        <div class="logo">
+          <h1 class="red">{{name}}</h1>
+        </div>
+        <div class="nav blue">
+          <nav>
+            <ul>
+              <li>New Game</li>
+              <li>History</li>
+              <li>Stats</li>
+            </ul>
+          </nav>
+        </div>
       </header>
       <section class="main-section">
 
       </section>
       <footer class="main-footer">
-        
+
       </footer>
     </main>
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
+
     <script src="js/app.js"></script>
-    <script src="js/hearts.js"></script>
+    <script src="js/mainCtrl.js"></script>
   </body>
 </html>
