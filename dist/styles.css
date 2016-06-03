@@ -1,39 +1,65 @@
-.main-header {
-  height: 100px;
-  width: 100%;
-  position: fixed;
-  background-color: rgba(128, 128, 128, 0.8);
+header {
+  height: 10vh;
+  overflow: hidden;
+  background-color: #0A1551;
   display: flex;
-  justify-content: space-between;
-  align-content: space-between; }
+  align-items: center;
+  justify-content: space-between; }
 
-.logo {
-  width: 30%;
-  margin: auto;
-  text-transform: uppercase;
-  font-size: 2rem; }
+header {
+  /* Float the list items side by side */
+  /* Style the links inside the list items */
+  /* Change background color of links on hover */
+  /* Hide the list item that contains the link that should open and close the topnav on small screens */ }
+  header ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #BD0009; }
+  header ul.topnav li {
+    float: right; }
+  header ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px; }
+  header ul.topnav li a:hover {
+    background-color: #fff;
+    color: #BD0009; }
+  header ul.topnav li.icon {
+    display: none; }
 
-.nav {
-  width: 40%;
-  margin: auto;
-  display: flex;
-  align-content: center;
-  justify-content: flex-end;
-  font-size: 1.5rem; }
+@media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  header {
+    width: 100vw;
+    height: 10vh;
+    overflow: hidden;
+    background-color: #0A1551;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+  ul.topnav li:not(:first-child) {
+    display: none; }
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block; }
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+  ul.topnav.responsive {
+    position: relative; }
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0; }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline; }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left; } }
 
-nav ul li {
-  display: inline;
-  list-style: none;
-  padding-right: 20px; }
-
-.main-section {
-  width: 80%;
-  margin: auto;
-  background-color: green;
-  height: 60vh; }
-
-.main-footer {
-  width: 100%;
-  height: 100px;
-  position: static;
-  background-color: gray; }
+.red {
+  color: #BD0009; }

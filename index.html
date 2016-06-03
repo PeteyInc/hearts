@@ -1,38 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="hearts">
-  <head>
+
+<head>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
+    <script src="https://use.fontawesome.com/367404a440.js"></script>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="dist/styles.css">
     <title>Hearts</title>
-  </head>
-  <body ng-controller="mainCtrl">
-    <main role="main">
-      <header class="main-header">
-        <div class="logo">
-          <h1 class="red">{{name}}</h1>
-        </div>
-        <div class="nav blue">
-          <nav>
-            <ul>
-              <li>New Game</li>
-              <li>History</li>
-              <li>Stats</li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <section class="main-section">
+</head>
 
-      </section>
-      <footer class="main-footer">
-
-      </footer>
-    </main>
-
-
+<body ng-controller="mainCtrl">
+    <jared></jared>
+    <ui-view></ui-view>
     <script src="dist/hearts.js"></script>
-  </body>
+</body>
+
 </html>
