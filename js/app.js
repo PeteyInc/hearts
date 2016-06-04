@@ -11,6 +11,9 @@ angular.module('hearts', ['ui.router']).config(function($stateProvider, $urlRout
     }).state('history', {
         url: '/history',
         templateUrl: 'views/history.html'
+    }).state('details', {
+        url: '/players/:id',
+        templateUrl: 'views/details.html'
     });
 
 }).directive("jared", function() {

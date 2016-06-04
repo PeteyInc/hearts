@@ -13,6 +13,9 @@ angular.module('hearts', ['ui.router']).config(function ($stateProvider, $urlRou
     }).state('history', {
         url: '/history',
         templateUrl: 'views/history.html'
+    }).state('details', {
+        url: '/players/:id',
+        templateUrl: 'views/details.html'
     });
 }).directive("jared", function () {
     return {
@@ -22,14 +25,18 @@ angular.module('hearts', ['ui.router']).config(function ($stateProvider, $urlRou
 });
 'use strict';
 
-angular.module('hearts').controller('mainCtrl', function ($scope, playerService) {
+angular.module('hearts').controller('mainCtrl', function ($scope, $stateParams, playerService) {
 
   $scope.name = "Hearts";
+
   $scope.getPlayers = function () {
     $scope.players = playerService.getPlayers();
+    console.log($scope.players);
   };
 
   $scope.getPlayers();
+
+  $scope.playerId = $stateParams.id;
 });
 'use strict';
 
