@@ -1,0 +1,65 @@
+header {
+  height: 10vh;
+  overflow: hidden;
+  background-color: #0A1551;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+header {
+  /* Float the list items side by side */
+  /* Style the links inside the list items */
+  /* Change background color of links on hover */
+  /* Hide the list item that contains the link that should open and close the topnav on small screens */ }
+  header ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #BD0009; }
+  header ul.topnav li {
+    float: right; }
+  header ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px; }
+  header ul.topnav li a:hover {
+    background-color: #fff;
+    color: #BD0009; }
+  header ul.topnav li.icon {
+    display: none; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  header {
+    width: 100vw;
+    height: 10vh;
+    overflow: hidden;
+    background-color: #0A1551;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+  ul.topnav li:not(:first-child) {
+    display: none; }
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block; }
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+  ul.topnav.responsive {
+    position: relative; }
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0; }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline; }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left; } }
+
+.red {
+  color: #BD0009; }
