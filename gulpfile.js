@@ -11,7 +11,7 @@ gulp.task('es6', function() {
   .pipe(babel({
     'presets': ['es2015']
   }))
-  .pipe(order(['js/app.js', 'js/ctrl.js', 'js/players.js']))
+  .pipe(order(['js/app.js', 'js/ctrl.js', 'js/players.js', 'js/detailsCtrl.js', 'js/games.js']))
   .pipe(concat('hearts.js'))
   .pipe(gulp.dest('dist'));
 });
