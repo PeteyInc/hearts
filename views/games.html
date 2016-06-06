@@ -1,0 +1,25 @@
+<section class="history">
+    <div class="gamehistory" ng-repeat="game in games">
+        <div class="gameid">
+          <span class="fa-stack fa-2x">
+            <i class="fa fa-circle red fa-stack-2x"></i>
+            <i class="fa fa-stack-1x fa-inverse">{{game.id}}</i>
+          </span></div>
+        <div class="scorecard">
+            <table>
+                <thead>
+                    <tr>
+                        <th ng-repeat="position in game.position track by $index">
+                            <a ui-sref="details({id: position.id})">{{position.name}}</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td ng-repeat="s in game.scores track by $index">
+                        {{scoreSum(s)}}
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

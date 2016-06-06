@@ -1,7 +1,7 @@
-<div ng-repeat="player in players">
-    <a ui-sref="details({id: player.id})">
-        <ul class="fa-ul">
-            <li><i class="fa fa-heart-o" aria-hidden="true"></i> {{player.name}}</li>
-        </ul>
-    </a>
-</div>
+<section class="players">
+    <div class="player" ng-repeat="player in players">
+        <a ui-sref="details({id: player.id})">
+                <h3><i class="fa fa-heart" aria-hidden="true"></i> {{player.name}}</h3>
+        </a>
+    </div>
+</section>

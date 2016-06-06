@@ -3,7 +3,7 @@ $BLUE: #0A1551;
 header {
     height: 10vh;
     overflow: hidden;
-    background-color: $BLUE;
+    border-bottom: 0.2rem solid $RED;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +23,7 @@ header {
     /* Style the links inside the list items */
     ul.topnav li a {
         display: inline-block;
-        color: #f2f2f2;
+        color: $BLUE;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -39,6 +39,84 @@ header {
     ul.topnav li.icon {
         display: none;
     }
+}
+.players {
+    box-sizing: border-box;
+    border: 1px solid orange;
+    width: 80%;
+    margin: auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.player {
+    box-sizing: border-box;
+    border-radius: 100%;
+    padding: 5px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $BLUE;
+    width: 200px;
+    height: 200px;
+
+    font-weight: bold;
+    text-align: center;
+}
+.player {
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+.history {
+    border: 1px solid blue;
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.gamehistory {
+    border: 1px solid red;
+    flex-grow: 1;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    // justify-content: center;
+}
+.gameid {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.scorecard {
+    border: 1px solid orange;
+    width: 80%;
+}
+.scorecard {
+    table {
+        width: 100%;
+        text-align: center;
+        border: 1px solid pink;
+    }
+    td {
+        width: 25%;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+.details {
+    width: 80%;
+    margin: auto;
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : portrait) {
     header {

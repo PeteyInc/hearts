@@ -8,9 +8,9 @@ angular.module('hearts', ['ui.router']).config(function($stateProvider, $urlRout
     }).state('players', {
         url: '/players',
         templateUrl: 'views/players.html'
-    }).state('history', {
-        url: '/history',
-        templateUrl: 'views/history.html'
+    }).state('games', {
+        url: '/games',
+        templateUrl: 'views/games.html'
     }).state('details', {
         url: '/players/:id',
         templateUrl: 'views/details.html',
@@ -25,6 +25,6 @@ angular.module('hearts', ['ui.router']).config(function($stateProvider, $urlRout
 }).directive("games", function() {
     return {
         restrict: 'E',
-        templateUrl: 'views/history.html'
+        templateUrl: 'views/games.html'
     };
 });

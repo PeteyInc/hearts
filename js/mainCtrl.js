@@ -1,11 +1,13 @@
-angular.module('hearts').controller('mainCtrl', function($scope, $stateParams, playerService) {
+angular.module('hearts').controller('mainCtrl', function($scope, $stateParams, playerService, gameService) {
 
     $scope.name = "Hearts";
+    $scope.players = playerService.getPlayers();
+    $scope.games = gameService.getGames();
 
-    $scope.getPlayers = function() {
-        $scope.players = playerService.getPlayers();
+    $scope.scoreSum = function(array) {
+      return array.reduce(function(a, b) {
+        return a + b;
+      });
     };
-
-    $scope.getPlayers();
 
 });

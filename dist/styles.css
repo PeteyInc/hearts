@@ -1,7 +1,7 @@
 header {
   height: 10vh;
   overflow: hidden;
-  background-color: #0A1551;
+  border-bottom: 0.2rem solid #BD0009;
   display: flex;
   align-items: center;
   justify-content: space-between; }
@@ -20,7 +20,7 @@ header {
     float: right; }
   header ul.topnav li a {
     display: inline-block;
-    color: #f2f2f2;
+    color: #0A1551;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -31,6 +31,78 @@ header {
     color: #BD0009; }
   header ul.topnav li.icon {
     display: none; }
+
+.players {
+  box-sizing: border-box;
+  border: 1px solid orange;
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.player {
+  box-sizing: border-box;
+  border-radius: 100%;
+  padding: 5px;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0A1551;
+  width: 200px;
+  height: 200px;
+  font-weight: bold;
+  text-align: center; }
+
+.player a {
+  color: white;
+  text-decoration: none; }
+
+.history {
+  border: 1px solid blue;
+  width: 75%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap; }
+
+.gamehistory {
+  border: 1px solid red;
+  flex-grow: 1;
+  display: flex;
+  margin: auto;
+  align-items: center; }
+
+.gameid {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+.scorecard {
+  border: 1px solid orange;
+  width: 80%; }
+
+.scorecard table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid pink; }
+
+.scorecard td {
+  width: 25%; }
+
+.scorecard a {
+  text-decoration: none; }
+
+.details {
+  width: 80%;
+  margin: auto; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   header {
