@@ -1,52 +1,60 @@
 @import url(https://fonts.googleapis.com/css?family=Rokkitt:400,700);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500italic,500,700,700italic);
-
 $RED: #BD0009;
 $BLUE: #0A1551;
-header {
-    height: 10vh;
-    overflow: hidden;
-    border-bottom: 0.2rem solid $RED;
+
+html {
+  font-size: 16px;
+  @media (min-width: 800px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rokkitt', serif;
+    font-weight: normal;
+    color: $BLUE;
+    text-shadow: 5px 1px 1px rgba(255,255,255, 1);
+}
+
+h1 {
+  font-size: 3.129em;
+  line-height: 1.2;
+
+  @media (min-width: 1200px) {
+    font-size: 2.3353em;
+    line-height: 1.3;
+  }
+}
+
+.navigation {
+    list-style: none;
+    margin: 0;
+    background: $BLUE;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
 }
-header {
-    ul.topnav {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        // overflow: hidden;
-        background-color: $RED;
-    }
-    /* Float the list items side by side */
-    ul.topnav li {
-      font-family: 'Rokkitt', serif;
-        float: right;
-    }
-    /* Style the links inside the list items */
-    ul.topnav li a {
-        display: inline-block;
-        color: $BLUE;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        transition: 0.3s;
-        font-size: 17px;
-    }
-    /* Change background color of links on hover */
-    ul.topnav li a:hover {
-        background-color: #fff;
-        color: $RED;
-    }
-    /* Hide the list item that contains the link that should open and close the topnav on small screens */
-    ul.topnav li.icon {
-        display: none;
-    }
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
 }
+.navigation a:hover {
+    background: lighten($BLUE, 10%);
+}
+
 .players {
     box-sizing: border-box;
-    border: 1px solid orange;
+    // border: 1px solid orange;
     width: 80%;
     margin: auto;
     display: -webkit-box;
@@ -69,13 +77,12 @@ header {
     background: $BLUE;
     width: 200px;
     height: 200px;
-
     font-weight: bold;
     text-align: center;
 }
 .player {
     img {
-      width: 100%;
+        width: 100%;
     }
     a {
         color: white;
@@ -83,7 +90,7 @@ header {
     }
 }
 .history {
-    border: 1px solid blue;
+    // border: 1px solid blue;
     width: 75%;
     margin: auto;
     display: flex;
@@ -91,6 +98,7 @@ header {
 }
 .gamehistory {
     border: 1px solid red;
+    padding-top: 5px;
     min-width: 30%;
     display: flex;
     margin: auto;
@@ -114,11 +122,18 @@ header {
         text-align: center;
         border: 1px solid pink;
     }
+
+    th {
+        border-bottom: 2px solid $BLUE;
+        a {
+            color: $BLUE;
+        }
+    }
     td {
         width: 25%;
     }
     a {
-      font-family: 'Ubuntu', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
         text-decoration: none;
     }
 }
@@ -127,41 +142,99 @@ header {
     margin: auto;
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : portrait) {
-    header {
-        width: 100vw;
-        height: 10vh;
-        overflow: hidden;
-        background-color: $BLUE;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+
+    .navigation {
+        -webkit-flex-flow: column wrap;
+        flex-flow: column wrap;
+        padding: 0;
     }
-    /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
-    ul.topnav li:not(:first-child) {
-        display: none;
+    .navigation a {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid rgba(255,255,255,0.3);
+        border-bottom: 1px solid rgba(0,0,0,0.1);
     }
-    ul.topnav li.icon {
-        float: right;
-        display: inline-block;
+    .navigation li:last-of-type a {
+        border-bottom: none;
     }
-    /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
-    ul.topnav.responsive {
-        position: relative;
-    }
-    ul.topnav.responsive li.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    ul.topnav.responsive li {
-        float: none;
-        display: inline;
-    }
-    ul.topnav.responsive li a {
-        display: block;
-        text-align: left;
+}
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: space-around;
     }
 }
 .red {
     color: $RED;
+}
+//
+// #C41330
+// #EC2124
+// #093466
+// #202558
+// #333333
+
+.howtoplay {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.how {
+  width: 30%;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.rules {
+  width: 60%;
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &:before{
+        display: block;
+        content: " ";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    > .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.playingcard {
+  @include aspect-ratio(33, 45);
+  width: 80%;
+  // height: 1125px;
+  border: .5px solid rgba(0, 0, 0, .5);
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+
+  // padding: 10%;
+  .safezone {
+    border: 2px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .first-letter {
+      display: flex;
+      align-self: flex-start;
+      width: 10%;
+    }
+    .center {
+      width: 80%;
+    }
+    .last-letter {
+      align-self: flex-end;
+      width: 10%;
+    }
+  }
 }

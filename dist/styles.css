@@ -1,43 +1,51 @@
 @import url(https://fonts.googleapis.com/css?family=Rokkitt:400,700);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500italic,500,700,700italic);
-header {
-  height: 10vh;
-  overflow: hidden;
-  border-bottom: 0.2rem solid #BD0009;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; }
+html {
+  font-size: 16px; }
+  @media (min-width: 800px) {
+    html {
+      font-size: 18px; } }
+  @media (min-width: 1200px) {
+    html {
+      font-size: 20px; } }
 
-header {
-  /* Float the list items side by side */
-  /* Style the links inside the list items */
-  /* Change background color of links on hover */
-  /* Hide the list item that contains the link that should open and close the topnav on small screens */ }
-  header ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #BD0009; }
-  header ul.topnav li {
-    font-family: 'Rokkitt', serif;
-    float: right; }
-  header ul.topnav li a {
-    display: inline-block;
-    color: #0A1551;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px; }
-  header ul.topnav li a:hover {
-    background-color: #fff;
-    color: #BD0009; }
-  header ul.topnav li.icon {
-    display: none; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rokkitt', serif;
+  font-weight: normal;
+  color: #0A1551;
+  text-shadow: 5px 1px 1px white; }
+
+h1 {
+  font-size: 3.129em;
+  line-height: 1.2; }
+  @media (min-width: 1200px) {
+    h1 {
+      font-size: 2.3353em;
+      line-height: 1.3; } }
+
+.navigation {
+  list-style: none;
+  margin: 0;
+  background: #0A1551;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end; }
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white; }
+
+.navigation a:hover {
+  background: #10217e; }
 
 .players {
   box-sizing: border-box;
-  border: 1px solid orange;
   width: 80%;
   margin: auto;
   display: -webkit-box;
@@ -71,7 +79,6 @@ header {
   text-decoration: none; }
 
 .history {
-  border: 1px solid blue;
   width: 75%;
   margin: auto;
   display: flex;
@@ -79,6 +86,7 @@ header {
 
 .gamehistory {
   border: 1px solid red;
+  padding-top: 5px;
   min-width: 30%;
   display: flex;
   margin: auto;
@@ -99,6 +107,11 @@ header {
   text-align: center;
   border: 1px solid pink; }
 
+.scorecard th {
+  border-bottom: 2px solid #0A1551; }
+  .scorecard th a {
+    color: #0A1551; }
+
 .scorecard td {
   width: 25%; }
 
@@ -111,33 +124,68 @@ header {
   margin: auto; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  header {
-    width: 100vw;
-    height: 10vh;
-    overflow: hidden;
-    background-color: #0A1551;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-  /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
-  ul.topnav li:not(:first-child) {
-    display: none; }
-  ul.topnav li.icon {
-    float: right;
-    display: inline-block; }
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
-  ul.topnav.responsive {
-    position: relative; }
-  ul.topnav.responsive li.icon {
-    position: absolute;
-    right: 0;
-    top: 0; }
-  ul.topnav.responsive li {
-    float: none;
-    display: inline; }
-  ul.topnav.responsive li a {
-    display: block;
-    text-align: left; } }
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0; }
+  .navigation a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .navigation li:last-of-type a {
+    border-bottom: none; } }
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around; } }
 
 .red {
   color: #BD0009; }
+
+.howtoplay {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; }
+
+.how {
+  width: 30%; }
+  .how ul {
+    list-style: none; }
+
+.rules {
+  width: 60%; }
+
+.playingcard {
+  position: relative;
+  width: 80%;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); }
+  .playingcard:before {
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: 136.36364%; }
+  .playingcard > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .playingcard .safezone {
+    border: 2px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .playingcard .safezone .first-letter {
+      display: flex;
+      align-self: flex-start;
+      width: 10%; }
+    .playingcard .safezone .center {
+      width: 80%; }
+    .playingcard .safezone .last-letter {
+      align-self: flex-end;
+      width: 10%; }
