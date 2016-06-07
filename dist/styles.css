@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Rokkitt:400,700);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500italic,500,700,700italic);
 header {
   height: 10vh;
   overflow: hidden;
@@ -17,6 +19,7 @@ header {
     padding: 0;
     background-color: #BD0009; }
   header ul.topnav li {
+    font-family: 'Rokkitt', serif;
     float: right; }
   header ul.topnav li a {
     display: inline-block;
@@ -43,7 +46,7 @@ header {
   display: -webkit-flex;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap; }
 
 .player {
@@ -60,6 +63,9 @@ header {
   font-weight: bold;
   text-align: center; }
 
+.player img {
+  width: 100%; }
+
 .player a {
   color: white;
   text-decoration: none; }
@@ -73,7 +79,7 @@ header {
 
 .gamehistory {
   border: 1px solid red;
-  flex-grow: 1;
+  min-width: 30%;
   display: flex;
   margin: auto;
   align-items: center; }
@@ -86,7 +92,6 @@ header {
   text-align: center; }
 
 .scorecard {
-  border: 1px solid orange;
   width: 80%; }
 
 .scorecard table {
@@ -98,6 +103,7 @@ header {
   width: 25%; }
 
 .scorecard a {
+  font-family: 'Ubuntu', sans-serif;
   text-decoration: none; }
 
 .details {

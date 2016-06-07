@@ -1,10 +1,8 @@
 <section class="history">
     <div class="gamehistory" ng-repeat="game in games">
-        <div class="gameid">
-          <span class="fa-stack fa-2x">
-            <i class="fa fa-circle red fa-stack-2x"></i>
-            <i class="fa fa-stack-1x fa-inverse">{{game.id}}</i>
-          </span></div>
+        <div class="gameid blue">
+          {{game.id}}
+        </div>
         <div class="scorecard">
             <table>
                 <thead>
