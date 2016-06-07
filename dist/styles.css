@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Rokkitt:400,700);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500italic,500,700,700italic);
+.fade {
+  z-index: 9999;
+  -webkit-transition: width 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  width: 0;
+  opacity: 0; }
+
+.fade.active {
+  opacity: 1; }
+
 html {
   font-size: 16px; }
   @media (min-width: 800px) {
@@ -9,11 +19,15 @@ html {
     html {
       font-size: 20px; } }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Rokkitt', serif;
   font-weight: normal;
-  color: #0A1551;
-  text-shadow: 5px 1px 1px white; }
+  color: #0A1551; }
 
 h1 {
   font-size: 3.129em;
@@ -45,8 +59,7 @@ h1 {
   background: #10217e; }
 
 .players {
-  box-sizing: border-box;
-  width: 80%;
+  width: 100%;
   margin: auto;
   display: -webkit-box;
   display: -moz-box;
@@ -58,18 +71,62 @@ h1 {
   flex-wrap: wrap; }
 
 .player {
-  box-sizing: border-box;
-  border-radius: 100%;
-  padding: 5px;
-  width: 25%;
+  position: relative;
+  margin-top: 15px;
+  width: 21%;
+  border: 0 solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0A1551;
-  width: 200px;
-  height: 200px;
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
+  .player:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 136.36364%; }
+  .player > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+
+.player__back,
+.player__front {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 91%;
+  height: 93%; }
+
+.player__back,
+.player__front {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s; }
+
+.player__front {
+  background-color: #BD0009; }
+
+.player__back {
+  background-color: #ffffff;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg); }
+
+.player.effect__hover:hover .player__front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg); }
+
+.player.effect__hover:hover .player__back {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0); }
 
 .player img {
   width: 100%; }
@@ -143,19 +200,19 @@ h1 {
 .red {
   color: #BD0009; }
 
-.howtoplay {
+.maincontent {
   width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-around;
   align-items: flex-start; }
 
-.how {
+.mainleft {
   width: 30%; }
-  .how ul {
+  .mainleft ul {
     list-style: none; }
 
-.rules {
+.mainright {
   width: 60%; }
 
 .playingcard {
@@ -166,7 +223,7 @@ h1 {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); }
   .playingcard:before {
     display: block;
-    content: " ";
+    content: "";
     width: 100%;
     padding-top: 136.36364%; }
   .playingcard > .content {

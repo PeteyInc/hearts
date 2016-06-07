@@ -17,6 +17,9 @@ angular.module('hearts', ['ui.router']).config(function ($stateProvider, $urlRou
         url: '/players/:id',
         templateUrl: 'views/details.html',
         controller: 'detailsCtrl'
+    }).state('newgame', {
+        url: '/play',
+        templateUrl: 'views/newgame.html'
     });
 }).directive("jared", function () {
     return {
@@ -27,6 +30,11 @@ angular.module('hearts', ['ui.router']).config(function ($stateProvider, $urlRou
     return {
         restrict: 'E',
         templateUrl: 'views/games.html'
+    };
+}).directive("players", function () {
+    return {
+        restrict: 'E',
+        templateUrl: 'views/players.html'
     };
 });
 'use strict';

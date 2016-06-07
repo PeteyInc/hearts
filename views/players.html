@@ -1,7 +1,13 @@
 <section class="players">
-    <div class="player" ng-repeat="player in players">
-        <a ui-sref="details({id: player.id})">
-                <h3><i class="fa fa-heart" aria-hidden="true"></i> {{player.name}}</h3>
-        </a>
+    <div class="player effect__hover" ng-repeat="player in players">
+      <div class="content">
+        <div class="player__front"></div>
+        <div class="player__back">
+          <a ui-sref="details({id: player.id})">
+            <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
+            <h3>{{player.name}}</h3>
+          </a>
+        </div>
+      </div>
     </div>
 </section>
