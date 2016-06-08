@@ -1,7 +1,31 @@
-<section class="details">
-<h2>{{player.name}} {{name}} Page </h2>
-<div>
-  Name: {{player.name}} <br>
-  ID: {{player.id}} <br>
+<section class="maincontent">
+  <div class="mainleft">
+    <h2>{{player.name}} {{name}} Page </h2>
+  <div>
+    Name: {{player.name}} <br>
+    ID: {{player.id}} <br>
+  </div></div>
+<div class="mainright">
+  <div class="gamehistory" ng-repeat="game in games | filter: player.id">
+    <div class="gameid blue">
+      <h1>{{game.id}}</h1>
+    </div>
+    <div class="scorecard">
+        <table>
+            <thead>
+                <tr>
+                    <th ng-repeat="position in game.position track by $index">
+                        <a ui-sref="details({id: position.id})">{{position.name}}</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <td ng-repeat="s in game.scores track by $index">
+                    {{scoreSum(s)}}
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>
 </section>
