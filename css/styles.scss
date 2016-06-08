@@ -3,21 +3,46 @@
 @mixin aspect-ratio($width, $height) {
     position: relative;
     &:before {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-content: center;
         content: "";
         width: 100%;
         padding-top: ($height / $width) * 100%;
     }
     > .content {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // border: 1px solid rgba(0, 0, 0, .2);
+        width: 90%;
+        height: 93%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
     }
+
+    > .cardback {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+        width: 85%;
+        height: 90%;
+        background-color: $RED;
+    }
+
 }
 $RED: #BD0009;
 $BLUE: #0A1551;
+// #C41330
+// #EC2124
+// #093466
+// #202558
+// #333333
+//
 .fade {
     // border: 1px solid black;
     // margin: 0 !important;
@@ -63,6 +88,8 @@ h1 {
     list-style: none;
     margin: 0;
     background: $BLUE;
+    -webkit-box-shadow: 0 2px 7px rgba(10, 21, 81, 0.3);
+    box-shadow: 0 2px 7px rgba(10, 21, 81, 0.3);
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -227,12 +254,6 @@ h1 {
 .red {
     color: $RED;
 }
-//
-// #C41330
-// #EC2124
-// #093466
-// #202558
-// #333333
 .maincontent {
     width: 80%;
     margin: auto;
@@ -250,29 +271,46 @@ h1 {
     width: 60%;
 }
 .playingcard {
-    @include aspect-ratio(33, 45);
-    width: 80%;
-    // height: 1125px;
-    border: 0.5px solid rgba(0, 0, 0, .5);
-    border-radius: 25px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
-    // padding: 10%;
-    .safezone {
-        border: 2px solid green;
+    @include aspect-ratio(11, 15);
+    margin-top: 15px;
+    width: 21%;
+    border: 0 solid rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    background: #fff;
+    -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: rgba(0, 0, 0, .5);
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+
+    .letter{
+      font-family: 'Rokkitt', serif;
+      font-weight: 700;
+      font-size: 4vw;
+      display: flex;
+      align-self: flex-start;
+      justify-content: center;
+      align-items: center;
+      // border: 1px solid orange;
+      width: 11.67%;
+      height: 12%;
+    }
+    .center {
+        width: 76.66%;
+        height: 88.5%;
         display: flex;
         justify-content: center;
         align-items: center;
-        .first-letter {
-            display: flex;
-            align-self: flex-start;
-            width: 10%;
-        }
-        .center {
-            width: 80%;
-        }
-        .last-letter {
-            align-self: flex-end;
-            width: 10%;
-        }
+    }
+    .last {
+        align-self: flex-end;
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
     }
 }

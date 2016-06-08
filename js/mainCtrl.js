@@ -10,4 +10,8 @@ angular.module('hearts').controller('mainCtrl', function($scope, $stateParams, p
       });
     };
 
+    $scope.cardNum = function(string) {
+      return string.charAt(0);
+    };
+
 });

@@ -41,6 +41,8 @@ h1 {
   list-style: none;
   margin: 0;
   background: #0A1551;
+  -webkit-box-shadow: 0 2px 7px rgba(10, 21, 81, 0.3);
+  box-shadow: 0 2px 7px rgba(10, 21, 81, 0.3);
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -86,16 +88,31 @@ h1 {
   text-align: center;
   position: relative; }
   .player:before {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     content: "";
     width: 100%;
     padding-top: 136.36364%; }
   .player > .content {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 93%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; }
+  .player > .cardback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 90%;
+    background-color: #BD0009; }
 
 .player__back,
 .player__front {
@@ -217,32 +234,64 @@ h1 {
 
 .playingcard {
   position: relative;
-  width: 80%;
-  border: 0.5px solid rgba(0, 0, 0, 0.5);
-  border-radius: 25px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); }
+  margin-top: 15px;
+  width: 21%;
+  border: 0 solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+  position: relative; }
   .playingcard:before {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     content: "";
     width: 100%;
     padding-top: 136.36364%; }
   .playingcard > .content {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
-  .playingcard .safezone {
-    border: 2px solid green;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 93%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; }
+  .playingcard > .cardback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 90%;
+    background-color: #BD0009; }
+  .playingcard .letter {
+    font-family: 'Rokkitt', serif;
+    font-weight: 700;
+    font-size: 4vw;
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    width: 11.67%;
+    height: 12%; }
+  .playingcard .center {
+    width: 76.66%;
+    height: 88.5%;
     display: flex;
     justify-content: center;
     align-items: center; }
-    .playingcard .safezone .first-letter {
-      display: flex;
-      align-self: flex-start;
-      width: 10%; }
-    .playingcard .safezone .center {
-      width: 80%; }
-    .playingcard .safezone .last-letter {
-      align-self: flex-end;
-      width: 10%; }
+  .playingcard .last {
+    align-self: flex-end;
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg); }
