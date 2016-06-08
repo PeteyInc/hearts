@@ -1,11 +1,25 @@
+<section class="maincontent">
 <div class="playingcard">
   <div class="content">
-    <div class="first-letter">J</div>
+    <div class="letter">J</div>
     <div class="center">Jared</div>
-    <div class="last-letter">J</div>
+    <div class="letter last">J</div>
   </div>
 </div>
 
 <div class="playingcard">
     <div class="cardback"></div>
+</div>
+</section>
+
+
+<div class="player effect__hover" ng-repeat="player in players">
+  <div class="content">
+    <div class="player__front"></div>
+    <div class="player__back">
+      <div class="playingcard">
+          <div class="cardback"></div>
+      </div>
+    </div>
+  </div>
 </div>

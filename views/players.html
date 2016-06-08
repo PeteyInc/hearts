@@ -1,6 +1,6 @@
 <section class="players">
   <div class="playingcard" ng-repeat="player in players">
-    <div class="content red">
+    <div class="content red" ui-sref="details({id: player.id})">
       <div class="letter">{{cardNum(player.name)}}</div>
       <div class="center">{{player.name}}</div>
       <div class="letter last">{{cardNum(player.name)}}</div>

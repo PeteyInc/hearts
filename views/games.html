@@ -1,5 +1,5 @@
 <section class="history">
-    <div class="gamehistory" ng-repeat="game in games">
+    <!-- <div class="gamehistory" ng-repeat="game in games">
         <div class="gameid blue">
           {{game.id}}
         </div>
@@ -19,13 +19,13 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <!-- <div class="playingcard" ng-repeat="game in games">
+    </div> -->
+    <div class="playingcard" ng-repeat="game in games">
         <div class="content">
             <div class="letter">{{game.id}}</div>
             <div class="center">
-                <div ng-repeat="position in game.position track by $index">
-                    <a ui-sref="details({id: position.id})">{{position.name}}</a>
+                <div ng-repeat="position in game.position track by $index" ui-sref="details({id: position.id})">
+                    {{position.name}}
                 </div><br />
                 <div ng-repeat="s in game.scores track by $index">
                     {{scoreSum(s)}}
@@ -33,5 +33,5 @@
             </div>
             <div class="letter last">{{game.id}}</div>
         </div>
-    </div> -->
+    </div>
 </section>
