@@ -299,6 +299,11 @@ p {
   transform: scale(1.05);
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3); }
 
+button {
+  background-color: #BD0009;
+  color: white;
+  border-radius: 5px; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .navigation {
     -webkit-flex-flow: column wrap;
