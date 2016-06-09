@@ -18,9 +18,6 @@ angular.module('hearts', ['ui.router']).config(function($stateProvider, $urlRout
     }).state('newgame', {
         url: '/play',
         templateUrl: 'views/newgame.html',
-    }).state('table', {
-        url: '/table',
-        templateUrl: 'views/scorecard.html',
     });
 
 }).directive("jared", function() {
@@ -39,3 +36,8 @@ angular.module('hearts', ['ui.router']).config(function($stateProvider, $urlRout
         templateUrl: 'views/players.html'
     };
 });
+//
+// .state('table', {
+//     url: '/table',
+//     templateUrl: 'views/scorecard.html',
+// })

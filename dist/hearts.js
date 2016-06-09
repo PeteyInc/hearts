@@ -20,9 +20,6 @@ angular.module('hearts', ['ui.router']).config(function ($stateProvider, $urlRou
     }).state('newgame', {
         url: '/play',
         templateUrl: 'views/newgame.html'
-    }).state('table', {
-        url: '/table',
-        templateUrl: 'views/scorecard.html'
     });
 }).directive("jared", function () {
     return {
@@ -40,6 +37,11 @@ angular.module('hearts', ['ui.router']).config(function ($stateProvider, $urlRou
         templateUrl: 'views/players.html'
     };
 });
+//
+// .state('table', {
+//     url: '/table',
+//     templateUrl: 'views/scorecard.html',
+// })
 'use strict';
 
 angular.module('hearts').controller('detailsCtrl', function ($scope, $stateParams, playerService) {
