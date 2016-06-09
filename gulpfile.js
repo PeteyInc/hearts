@@ -5,6 +5,8 @@ var sass = require('gulp-sass');
 var order = require('gulp-order');
 var ngAnnotate = require('gulp-ng-annotate');
 var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
+var postcss = require('gulp-postcss');
 
 gulp.task('es6', function() {
   gulp.src(['js/*.js'])
@@ -21,6 +23,14 @@ gulp.task('sass', function() {
   .pipe(sass().on('error', sass.logError))
   .pipe(gulp.dest('dist'));
 });
+
+// gulp.task('autoprefixer', function () {
+//     return gulp.src('./src/*.css')
+//         .pipe(sourcemaps.init())
+//         .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+//         .pipe(sourcemaps.write('.'))
+//         .pipe(gulp.dest('dist'));
+// });
 
 gulp.watch('css/*.scss', ['sass']);
 gulp.watch(['js/*.js'], ['es6']);

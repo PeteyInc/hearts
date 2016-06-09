@@ -4,11 +4,20 @@
   <div>
     Name: {{player.name}} <br>
     ID: {{player.id}} <br>
-  </div></div>
+  </div>
+  <!-- <div>
+  <form class="" ng-model="$index">
+    <input type="radio" name="position" value="0" checked> 1<br>
+    <input type="radio" name="position" value="1" checked> 2<br>
+    <input type="radio" name="position" value="2" checked> 3<br>
+    <input type="radio" name="position" value="3" checked> 4<br>
+  </form>
+  </div> -->
+</div>
 <div class="mainright">
   <div class="gamehistory" ng-repeat="game in games | filter: player.id">
-    <div class="gameid blue">
-      <h1>{{game.id}}</h1>
+    <div class="gameid">
+      {{game.id}}
     </div>
     <div class="scorecard">
         <table>

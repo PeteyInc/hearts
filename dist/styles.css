@@ -30,12 +30,26 @@ h6 {
   color: #0A1551; }
 
 h1 {
-  font-size: 3.129em;
+  font-size: 3.129vmin;
   line-height: 1.2; }
   @media (min-width: 1200px) {
     h1 {
-      font-size: 2.3353em;
+      font-size: 2.3353vmax;
       line-height: 1.3; } }
+
+h2 {
+  font-size: 2.629vmax;
+  line-height: 1.2; }
+  @media (min-width: 1200px) {
+    h2 {
+      font-size: 2.3353vmax;
+      line-height: 1.3; } }
+
+h3 {
+  font-size: 2.129vmax; }
+  @media (min-width: 1200px) {
+    h3 {
+      font-size: 2.3353vmax; } }
 
 p {
   font-family: 'Ubuntu', sans-serif; }
@@ -44,7 +58,7 @@ p {
   list-style: none;
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
-  background: #0A1551;
+  background: #333333;
   -webkit-box-shadow: 0 2px 7px rgba(10, 21, 81, 0.3);
   box-shadow: 0 2px 7px rgba(10, 21, 81, 0.3);
   display: -webkit-box;
@@ -57,12 +71,13 @@ p {
 
 .navigation a {
   text-decoration: none;
+  position: relative;
   display: block;
   padding: 1em;
   color: white; }
 
 .navigation a:hover {
-  background: #10217e; }
+  background: #4d4d4d; }
 
 .players {
   box-sizing: border-box;
@@ -156,8 +171,8 @@ p {
   text-align: center;
   font-family: 'Rokkitt', serif;
   font-weight: normal;
-  color: #0A1551;
-  font-size: 2vmin; }
+  color: #BD0009;
+  font-size: 2vmax; }
 
 .scorecard {
   width: 80%; }
@@ -187,7 +202,6 @@ p {
 
 .maincontent {
   width: 80%;
-  margin: auto;
   display: flex;
   justify-content: space-around;
   align-items: flex-start; }
@@ -195,19 +209,21 @@ p {
 .mainleft {
   width: 30%; }
   .mainleft ul {
-    list-style: none; }
+    list-style: none;
+    padding-left: 0; }
 
 .mainright {
   width: 60%; }
 
 .playingcard {
   position: relative;
+  box-sizing: border-box;
   margin-top: 15px;
-  width: 21%;
+  width: 23%;
   border-radius: 10px;
   background-color: #fafafa;
-  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,7 +275,7 @@ p {
   .playingcard .letter {
     font-family: 'Rokkitt', serif;
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 3vw;
     display: flex;
     align-self: flex-start;
     justify-content: center;
@@ -278,6 +294,10 @@ p {
     -moz-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);
     -o-transform: rotate(-180deg); }
+
+.playingcard:hover {
+  transform: scale(1.01);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3); }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .navigation {
