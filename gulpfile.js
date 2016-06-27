@@ -18,19 +18,19 @@ gulp.task('es6', function() {
   .pipe(gulp.dest('dist'));
 });
 
+gulp.task('autoprefixer', function () {
+    return gulp.src('./src/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('sass', function() {
   return gulp.src('css/*.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(gulp.dest('dist'));
 });
-
-// gulp.task('autoprefixer', function () {
-//     return gulp.src('./src/*.css')
-//         .pipe(sourcemaps.init())
-//         .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-//         .pipe(sourcemaps.write('.'))
-//         .pipe(gulp.dest('dist'));
-// });
 
 gulp.watch('css/*.scss', ['sass']);
 gulp.watch(['js/*.js'], ['es6']);
